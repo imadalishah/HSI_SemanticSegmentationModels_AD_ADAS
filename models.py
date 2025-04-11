@@ -275,6 +275,7 @@ class ASPP(nn.Module):
         x = self.bn(x)
         return self.act(x)
 
+
 # Pyramid Pooling Module for PSPNet
 class PyramidPoolingModule(nn.Module):
     def __init__(self, in_channels, act='ReLU'):
@@ -466,6 +467,30 @@ def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 
         return HRNet(in_channels, out_channels, act)
     
     elif model_type == 'PSPNet':
+
+        class ResidualBlock(nn.Module):
+            def __init__(self, in_channels, out_channels, stride=1, act='ReLU'):
+                super().__init__()
+                self.act = act_dict.get(act, nn.ReLU)()
+                self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=stride, padding=1, bias=False)
+                self.bn1 = nn.BatchNorm2d(out_channels)
+                self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=False)
+                self.bn2 = nn.BatchNorm2d(out_channels)
+
+                self.shortcut = nn.Sequential()
+                if stride != 1 or in_channels != out_channels:
+                    self.shortcut = nn.Sequential(
+                        nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=stride, bias=False),
+                        nn.BatchNorm2d(out_channels)
+                    )
+
+            def forward(self, x):
+                out = self.act(self.bn1(self.conv1(x)))
+                out = self.bn2(self.conv2(out))
+                out += self.shortcut(x)
+                out = self.act(out)
+                return out
+
         class DynamicBackbone(nn.Module):
             def __init__(self, in_channels, min_size=8, act='ReLU'):
                 super().__init__()
