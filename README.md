@@ -45,11 +45,8 @@ pip install -r requirements.txt # Will upload shortly
 ```py
 import torch
 from models import create_model
-```
 
-### Create a UNet model
-
-```py
+# Create a UNet model
 model = create_model(
     model_type='UNet',
     in_channels=15,  # Number of input spectral bands
@@ -58,12 +55,14 @@ model = create_model(
     act='ReLU'  # Activation function
 )
 
-# Process an input tensor
+# Process a test input tensor for verification
 input_tensor = torch.randn(1, 15, 210, 150)  # [batch_size, channels, height, width]
 output = model(input_tensor)  # Shape: [1, 10, 210, 150]
+```
 
 ### Available Models
 
+```py
 # UNet with CBAM attention
 model_cbam = create_model('UNet_CBAM', in_channels=15, out_channels=10)
 
@@ -81,11 +80,13 @@ model_hrnet = create_model('HRNet', in_channels=15, out_channels=10)
 
 # PSPNet
 model_pspnet = create_model('PSPNet', in_channels=15, out_channels=10)
+```
 
-## Model Testing
+## Model Verification
 
-The repository includes a testing framework to verify model functionality with different input dimensions:
+The repository includes a verification framework to verify model functionality with different input dimensions:
 
+```py
 from test_models import test_all_models
 
 # Test dimensions
