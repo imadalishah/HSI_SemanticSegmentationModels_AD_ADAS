@@ -125,4 +125,4 @@ If you use this code in your research, please cite our paper and also the releva
 
 ## Contact
 
-For questions or feedback, please open an issue or contact the authors.
+For questions or feedback, please open an issue here or contact the corresponidng author.
