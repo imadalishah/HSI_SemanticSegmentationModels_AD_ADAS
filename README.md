@@ -124,7 +124,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- This research was presented at [IEEE WHISPERS 2024](10.1109/WHISPERS65427.2024.10876494)
+- This research was presented at [IEEE WHISPERS 2024](https://doi.org/10.1109/WHISPERS65427.2024.10876494)
 - We thank the authors of the HSI datasets (i.e. HyKo, HSI-Drive, HSI-Road, and Hyperspectral City) and SSMs (i.e. UNet, PSPNet, HRNet, DeepLabv3+, CBAM and CA)
 
 ## Contact
