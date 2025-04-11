@@ -1,9 +1,3 @@
-I'll search for information about the research paper to help create a comprehensive README file.
-
-Let me access the research paper to understand its content better.
-
-Based on the research paper and search results, I'll create a comprehensive GitHub README for your code repository.
-
 # HSI-Segmentation
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
