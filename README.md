@@ -102,7 +102,7 @@ def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 
     elif model_type == 'UNet_CBAM':
         return BaseUNet(in_channels, out_channels, features, act,
                         attention_module=CBAM, attention_params={'reduction': 16})
-    # ... other model types
+    # ... others: Deeplabv3+, ...
 ```
 
 ## Citation
