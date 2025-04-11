@@ -29,9 +29,9 @@ Hyperspectral Imaging (HSI) offers significant advantages over traditional RGB i
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/HSI-Segmentation.git
-cd HSI-Segmentation
-pip install -r requirements.txt
+git clone https://github.com/imadalishah/HSI_SemanticSegmentationModels_AD_ADAS.git
+cd HSI_SemanticSegmentationModels_AD_ADAS
+pip install -r requirements.txt # Will upload shortly
 ```
 
 ## Usage
@@ -111,28 +111,6 @@ def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 
                         attention_module=CBAM, attention_params={'reduction': 16})
     # ... other model types
 
-## Results
-
-Our testing confirms that all models successfully handle various input dimensions:
-
-```
-Testing input with dimensions: [C=15, H=210, W=150]
-  Testing UNet...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing UNet_CBAM...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing UNet_CA...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing UNet_CBAM_SkipConnection...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing DeepLabV3Plus...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing HRNet...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-  Testing PSPNet...
-    Success! Output shape: torch.Size([1, 10, 210, 150])
-```
-
 ## Citation
 
 If you use this code in your research, please cite our paper and also the relevant authors of the used Models:
@@ -153,7 +131,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - This research was presented at IEEE WHISPERS 2024
-- We thank the authors of the HSI datasets: HyKo, HSI-Drive, HSI-Road, and Hyperspectral City
+- We thank the authors of the HSI datasets (i.e. HyKo, HSI-Drive, HSI-Road, and Hyperspectral City) and SSMs (i.e. UNet, PSPNet, HRNet, DeepLabv3+, CBAM and CA)
 
 ## Contact
 
