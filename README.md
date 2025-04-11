@@ -1,16 +1,13 @@
-# HSI-Segmentation
-
+## Hyperspectral Imaging-Based Perception in Autonomous Driving: Semantic Segmentation Models
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.10%2B-orange)](https://pytorch.org/)
 
-## Hyperspectral Imaging-Based Perception in Autonomous Driving: Semantic Segmentation Models
-
-This repository contains the implementation of various semantic segmentation models for hyperspectral imaging (HSI) data as described in our paper: [Hyperspectral Imaging-Based Perception in Autonomous Driving Scenarios: Benchmarking Baseline Semantic Segmentation Models](https://arxiv.org/pdf/2410.22101).
+This repository contains the implementation of various semantic segmentation models (SSMs) for hyperspectral imaging (HSI) data as described in our paper: [Hyperspectral Imaging-Based Perception in Autonomous Driving Scenarios: Benchmarking Baseline Semantic Segmentation Models](https://arxiv.org/pdf/2410.22101).
 
 ### Overview
 
-Hyperspectral Imaging (HSI) offers significant advantages over traditional RGB imaging in various domains including remote sensing, agriculture, medicine, and increasingly in Advanced Driving Assistance Systems (ADAS). This repository provides a modular and flexible implementation of several state-of-the-art semantic segmentation models adapted for HSI data:
+Hyperspectral Imaging (HSI) offers significant advantages over traditional RGB imaging, that have been proven in the domains like remote sensing, agriculture, and medicine. Recently, it is increasingly being investigated for Advanced Driving Assistance Systems (ADAS) and Autonomous Driving (AD) scenarious. This repository provides a modular implementation of several baseline SSMs adapted for HSI (arbitrary dimensioned) data:
 
 - **UNet**: Basic UNet architecture
 - **UNet_CBAM**: UNet with Convolutional Block Attention Module
