@@ -82,24 +82,6 @@ model_hrnet = create_model('HRNet', in_channels=15, out_channels=10)
 model_pspnet = create_model('PSPNet', in_channels=15, out_channels=10)
 ```
 
-## Model Verification
-
-The repository includes a verification framework to verify model functionality with different input dimensions:
-
-```py
-from ArbitaryInputShapeCheck import test_all_models
-
-# Test dimensions
-dimensions = [
-    [15, 210, 150],   # [channels, height, width]
-    [128, 472, 355],
-    [25, 209, 416]
-]
-
-# Run tests
-test_all_models(dimensions)
-```
-
 ## Paper Abstract
 
 Hyperspectral Imaging (HSI) is known for its advantages over traditional RGB imaging in remote sensing, agriculture, and medicine. Recently, it has gained attention for enhancing Advanced Driving Assistance Systems (ADAS) perception. Several HSI datasets such as HyKo, HSI-Drive, HSI-Road, and Hyperspectral City have been made available. However, a comprehensive evaluation of semantic segmentation models (SSM) using these datasets is lacking.
