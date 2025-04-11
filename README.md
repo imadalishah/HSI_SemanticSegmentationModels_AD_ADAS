@@ -87,7 +87,7 @@ model_pspnet = create_model('PSPNet', in_channels=15, out_channels=10)
 The repository includes a verification framework to verify model functionality with different input dimensions:
 
 ```py
-from test_models import test_all_models
+from ArbitaryInputShapeCheck import test_all_models
 
 # Test dimensions
 dimensions = [
