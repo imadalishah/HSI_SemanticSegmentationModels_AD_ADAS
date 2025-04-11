@@ -1,4 +1,4 @@
-(Currently Updating: May Include some issues or erros)
+(Currently Updating: May Include some issues and erros)
 
 ## Hyperspectral Imaging-Based Perception in Autonomous Driving: Semantic Segmentation Models
 
