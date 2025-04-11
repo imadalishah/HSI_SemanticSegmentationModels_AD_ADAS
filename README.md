@@ -1,7 +1,11 @@
+(Currently Updating: May Include some issues or erros)
+
 ## Hyperspectral Imaging-Based Perception in Autonomous Driving: Semantic Segmentation Models
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-1.10%2B-orange)](https://pytorch.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/imadalishah/HSI_SemanticSegmentationModels_AD_ADAS/blob/main/HSI_SemanticSegmentation_Models.ipynb)
 
 This repository contains the implementation of various semantic segmentation models (SSMs) for hyperspectral imaging (HSI) data as described in our paper: [Hyperspectral Imaging-Based Perception in Autonomous Driving Scenarios: Benchmarking Baseline Semantic Segmentation Models](https://arxiv.org/pdf/2410.22101).
 
