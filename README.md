@@ -47,7 +47,7 @@ import torch
 from models import create_model
 ```
 
-# Create a UNet model
+### Create a UNet model
 
 ```py
 model = create_model(
