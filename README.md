@@ -42,10 +42,14 @@ pip install -r requirements.txt # Will upload shortly
 
 ### Model Creation
 
+```py
 import torch
 from models import create_model
+```
 
 # Create a UNet model
+
+```py
 model = create_model(
     model_type='UNet',
     in_channels=15,  # Number of input spectral bands
@@ -93,6 +97,7 @@ dimensions = [
 
 # Run tests
 test_all_models(dimensions)
+```
 
 ## Paper Abstract
 
@@ -106,6 +111,7 @@ Our results indicate that UNet-CBAM, which extracts channel-wise features, outpe
 
 The implementation follows a modular approach with a factory pattern for model creation:
 
+```py
 def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 512], act='ReLU'):
     # Factory function that returns the requested model type
     if model_type == 'UNet':
@@ -114,6 +120,7 @@ def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 
         return BaseUNet(in_channels, out_channels, features, act,
                         attention_module=CBAM, attention_params={'reduction': 16})
     # ... other model types
+```
 
 ## Citation
 
