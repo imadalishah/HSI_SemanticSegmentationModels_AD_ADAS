@@ -7,7 +7,7 @@ act_dict = {
     'ReLU': nn.ReLU,
     'ELU': nn.ELU,
     'SiLU': nn.SiLU,
-    # 'Mish': Mish(), # Uncomment if Mish is defined elsewhere
+    # 'Mish': Mish(),
     'GELU': nn.GELU,
     'LeakyReLU': nn.LeakyReLU,
     'Tanh': nn.Tanh,
@@ -29,7 +29,7 @@ class ConvBlock(nn.Module):
     def forward(self, x):
         return self.act(self.bn(self.conv(x)))
 
-# Double convolution block (used in UNet variants)
+# Double convolution block for UNet
 class DoubleConv(nn.Module):
     def __init__(self, in_channels, out_channels, act='ReLU'):
         super().__init__()
@@ -145,9 +145,9 @@ class BaseUNet(nn.Module):
         for i, down in enumerate(self.downs):
             x = down(x)
             if self.attention_module:
-                if i % 2 == 0:  # Only store outputs from DoubleConv layers
+                if i % 2 == 0:  # outputs from DoubleConv layers
                     skip_connections.append(x)
-                    if i < len(self.downs) - 1:  # Don't pool after the last down layer
+                    if i < len(self.downs) - 1:  # No pool at last down layer
                         x = self.pool(x)
             else:
                 skip_connections.append(x)
@@ -169,7 +169,7 @@ class BaseUNet(nn.Module):
             x = self.ups[i + 1](concat_skip)  # DoubleConv
             
             if self.attention_module and i + 2 < len(self.ups):
-                x = self.ups[i + 2](x)  # Apply attention
+                x = self.ups[i + 2](x)  # Apply passed attention, CA or CBAM or NOne
         
         return self.final_conv(x)
 
