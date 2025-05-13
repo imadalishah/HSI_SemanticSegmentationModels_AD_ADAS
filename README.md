@@ -20,14 +20,13 @@ Hyperspectral Imaging (HSI) offers significant advantages over traditional RGB i
 - **HRNet**: High-Resolution Network
 - **PSPNet**: Pyramid Scene Parsing Network
 
-### Key Features
+## Paper Abstract
 
-- Modular architecture with easy component swapping
-- Support for various activation functions
-- Factory pattern for model instantiation
-- Flexible input dimensions handling
-- Attention mechanisms integration (CBAM, Coordinate Attention)
-- Comprehensive testing framework
+Hyperspectral Imaging (HSI) is known for its advantages over traditional RGB imaging in remote sensing, agriculture, and medicine. Recently, it has gained attention for enhancing Advanced Driving Assistance Systems (ADAS) perception. Several HSI datasets such as HyKo, HSI-Drive, HSI-Road, and Hyperspectral City have been made available. However, a comprehensive evaluation of semantic segmentation models (SSM) using these datasets is lacking.
+
+To address this gap, we evaluated the available annotated HSI datasets on four deep learning-based baseline SSMs: DeepLab v3+, HRNet, PSPNet, and U-Net, along with its two variants: Coordinate Attention (UNet-CA) and Convolutional Block-Attention Module (UNet-CBAM). The original model architectures were adapted to handle the varying spatial and spectral dimensions of the datasets.
+
+Our results indicate that UNet-CBAM, which extracts channel-wise features, outperforms other SSMs and shows potential to leverage spectral information for enhanced semantic segmentation. This study establishes a baseline SSM benchmark on available annotated datasets for future evaluation of HSI-based ADAS perception.
 
 ## Installation
 
@@ -81,28 +80,6 @@ model_hrnet = create_model('HRNet', in_channels=15, out_channels=10)
 model_pspnet = create_model('PSPNet', in_channels=15, out_channels=10)
 ```
 
-## Paper Abstract
-
-Hyperspectral Imaging (HSI) is known for its advantages over traditional RGB imaging in remote sensing, agriculture, and medicine. Recently, it has gained attention for enhancing Advanced Driving Assistance Systems (ADAS) perception. Several HSI datasets such as HyKo, HSI-Drive, HSI-Road, and Hyperspectral City have been made available. However, a comprehensive evaluation of semantic segmentation models (SSM) using these datasets is lacking.
-
-To address this gap, we evaluated the available annotated HSI datasets on four deep learning-based baseline SSMs: DeepLab v3+, HRNet, PSPNet, and U-Net, along with its two variants: Coordinate Attention (UNet-CA) and Convolutional Block-Attention Module (UNet-CBAM). The original model architectures were adapted to handle the varying spatial and spectral dimensions of the datasets.
-
-Our results indicate that UNet-CBAM, which extracts channel-wise features, outperforms other SSMs and shows potential to leverage spectral information for enhanced semantic segmentation. This study establishes a baseline SSM benchmark on available annotated datasets for future evaluation of HSI-based ADAS perception.
-
-## Model Architecture
-
-The implementation follows a modular approach with a factory pattern for model creation:
-
-```py
-def create_model(model_type, in_channels, out_channels, features=[64, 128, 256, 512], act='ReLU'):
-    # Factory function that returns the requested model type
-    if model_type == 'UNet':
-        return BaseUNet(in_channels, out_channels, features, act)
-    elif model_type == 'UNet_CBAM':
-        return BaseUNet(in_channels, out_channels, features, act,
-                        attention_module=CBAM, attention_params={'reduction': 16})
-    # ... others: Deeplabv3+, ...
-```
 
 ## Citation
 
