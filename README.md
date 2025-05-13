@@ -16,7 +16,6 @@ Hyperspectral Imaging (HSI) offers significant advantages over traditional RGB i
 - **UNet**: Basic UNet architecture
 - **UNet_CBAM**: UNet with Convolutional Block Attention Module
 - **UNet_CA**: UNet with Coordinate Attention
-- **UNet_CBAM_SkipConnection**: UNet with CBAM applied to skip connections
 - **DeepLabV3Plus**: DeepLabV3+ architecture
 - **HRNet**: High-Resolution Network
 - **PSPNet**: Pyramid Scene Parsing Network
